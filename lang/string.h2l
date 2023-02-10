@@ -1,0 +1,11 @@
+class string {
+  char[] array;
+  void append(char c) {
+    array[array.Count] = c;
+  }
+  void append(string s) {
+    foreach (let c in s.array) {
+      append(s[0]);
+    }
+  }
+}
