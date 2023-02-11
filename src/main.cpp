@@ -1,3 +1,4 @@
+#include "modes/debug.hpp"
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
@@ -22,9 +23,9 @@ int main(int argc, char **argv) {
     } else if (args.count("project")) {
       return EXIT_FAILURE;
     }
-    ifstream main;
-    char delimiter = ';';
-    main.open("");
+    if (args["mode"] == "debug") {
+      Build(args["project"], true);
+    }
     return EXIT_SUCCESS;
   }
 }
